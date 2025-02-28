@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game"
+    android:paddingHorizontal="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="4dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cousine_bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Logical quiz" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:max="100"
+        android:progress="10"
+        android:progressTint="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/tv_curr_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/cousine_bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@+id/progress"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cousine_bold"
+        android:text="of"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_curr_question"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_question"
+        app:layout_constraintStart_toEndOf="@+id/tv_curr_question" />
+
+    <TextView
+        android:id="@+id/tv_count_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/cousine_bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@+id/tv_curr_question"
+        tools:layout_editor_absoluteX="31dp"
+        tools:text="10" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/img_chronometer"
+        app:layout_constraintBottom_toBottomOf="@id/timer"
+        app:layout_constraintEnd_toStartOf="@id/timer"
+        app:layout_constraintTop_toTopOf="@id/timer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:fontFamily="@font/cousine_bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/progress"
+        app:layout_constraintTop_toBottomOf="@+id/progress" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="26dp"
+            android:fontFamily="@font/bastamanbold_bold"
+            android:justificationMode="inter_word"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Test question" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_test_option1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_variant"
+            android:fontFamily="@font/cousine_bold"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_test_option2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_test_option2"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_variant"
+            android:fontFamily="@font/cousine_bold"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_test_option3"
+            app:layout_constraintEnd_toEndOf="@+id/tv_test_option1"
+            app:layout_constraintStart_toStartOf="@+id/tv_test_option1"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_option1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_test_option3"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_variant"
+            android:fontFamily="@font/cousine_bold"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_test_option4"
+            app:layout_constraintEnd_toEndOf="@+id/tv_test_option2"
+            app:layout_constraintStart_toStartOf="@+id/tv_test_option2"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_option2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_test_option4"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_variant"
+            android:fontFamily="@font/cousine_bold"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_test_option3"
+            app:layout_constraintStart_toStartOf="@+id/tv_test_option3"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_option3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_btn"
+        android:enabled="false"
+        android:text="Oldinga"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
